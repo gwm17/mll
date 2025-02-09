@@ -1,0 +1,4 @@
+data/
+*.sav
+.DS_Store
+.venv/
