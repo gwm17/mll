@@ -2,3 +2,5 @@ data/
 *.sav
 .DS_Store
 .venv/
+*.h5
+*.parquet
