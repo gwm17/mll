@@ -11,20 +11,18 @@ from pathlib import Path
 from engine_loader.create import RangeParameter, create_dataset, DatasetParameters
 from numpy import pi
 
-h5_path = Path("proton_dataset.h5")
-df_path = Path("proton_dataset.parquet")
-# h5_path = Path("proton_test_dataset.h5")
-# df_path = Path("proton_test_dataset.parquet")
+# h5_path = Path("proton_dataset.h5")
+# df_path = Path("proton_dataset.parquet")
+h5_path = Path("proton_test_dataset.h5")
+df_path = Path("proton_test_dataset.parquet")
 
 
-gas = load_target(
-    Path("/Users/gordon/Experiments/a1975/gas/deuterium_gas.json"), nuclear_map
-)
+gas = load_target(Path("./deuterium_gas.json"), nuclear_map)
 if not isinstance(gas, GasTarget):
     raise Exception("Could not load gas target!")
 
 dset_params = DatasetParameters(
-    n_samples=100_000,
+    n_samples=10_000,
     z=1,
     a=1,
     energy=RangeParameter(0.1, 10.0),
